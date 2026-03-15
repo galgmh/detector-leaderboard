@@ -13,19 +13,28 @@
 
 <input type="text" id="search" placeholder="Search model or organization">
 
+<button onclick="sortTable('AUC')">Sort by AUC</button>
+<button onclick="sortTable('F1')">Sort by F1</button>
+<button onclick="sortTable('score')">Sort by Score</button>
+
 <table id="leaderboard">
+
 <thead>
 <tr>
-<th onclick="sortTable('rank')">Rank</th>
-<th onclick="sortTable('model')">Model</th>
-<th onclick="sortTable('org')">Organization</th>
-<th onclick="sortTable('score')">Score</th>
-<th>Date</th>
+<th>Rank</th>
+<th>Detector</th>
+<th>Organization</th>
+<th>AUC</th>
+<th>F1</th>
+<th>Score</th>
+<th>Dataset</th>
+<th>Paper</th>
 <th>Code</th>
 </tr>
 </thead>
 
 <tbody></tbody>
+
 </table>
 
 <script src="script.js"></script>
