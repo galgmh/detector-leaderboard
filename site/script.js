@@ -29,7 +29,6 @@ tr.innerHTML=`
 <td>${d.organization}</td>
 <td>${d.AUC.toFixed(3)}</td>
 <td>${d.F1.toFixed(3)}</td>
-<td>${d.score.toFixed(3)}</td>
 <td>${d.dataset}</td>
 <td><a href="${d.paper}" target="_blank">paper</a></td>
 <td><a href="${d.code}" target="_blank">code</a></td>
