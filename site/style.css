@@ -1,29 +1,32 @@
-/* 基础样式 */
+/* 基础背景与文字颜色 */
 body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: #f0f2f5;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #121212; /* 深色背景 */
+    color: #e0e0e0;      /* 浅灰色文字，比纯白更护眼 */
     margin: 0;
     padding: 20px;
-    color: #1a1a1a;
 }
 
-/* 头部居中样式 */
+/* 头部样式 */
 .page-header {
     text-align: center;
     margin-bottom: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
 }
 
 .page-header h1 {
-    margin-bottom: 10px;
+    color: #ffffff;
     font-size: 2.5rem;
 }
 
 .centered-logo {
-    width: 150px;  /* 固定宽度 */
-    height: 150px; /* 固定高度 */
-    object-fit: contain; /* 确保图片比例不失真 */
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
     display: block;
-    margin: 0 auto;
+    margin: 15px auto;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.1)); /* 给logo加点微光 */
 }
 
 /* 主体双栏布局 */
@@ -35,55 +38,92 @@ body {
     align-items: flex-start;
 }
 
-/* 左侧介绍板 */
+/* 左侧介绍板 - 深色卡片化 */
 .left-panel {
-    flex: 1; /* 占据较小空间 */
-    background: white;
+    flex: 1;
+    background: #1e1e1e; /* 比背景稍浅的黑色 */
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    position: sticky; /* 滚动时固定在左侧 */
+    border: 1px solid #333;
+    position: sticky;
     top: 20px;
+}
+
+.left-panel h2, .left-panel h3 {
+    color: #bb86fc; /* 使用紫色作为强调色，典型的深色UI风格 */
 }
 
 /* 右侧排行榜板 */
 .right-panel {
-    flex: 2.5; /* 占据较大空间 */
-    background: white;
+    flex: 2.5;
+    background: #1e1e1e;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #333;
 }
 
-/* 控件样式 */
+/* 控件样式 - 深色适配 */
 .controls {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-#search { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
-#datasetFilter { padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+#search, #datasetFilter {
+    background: #2d2d2d;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 6px;
+}
 
-/* 表格美化 */
+#search::placeholder {
+    color: #888;
+}
+
+/* 表格深色美化 */
 table {
     width: 100%;
     border-collapse: collapse;
+    background: transparent;
 }
 
 th {
-    background: #f8f9fa;
-    color: #666;
+    background: #252525;
+    color: #bb86fc;
     font-weight: 600;
     padding: 12px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #333;
     text-align: left;
     cursor: pointer;
 }
 
 td {
     padding: 15px 12px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #2d2d2d;
 }
 
-tr:hover { background: #f9f9f9; }
+tr:hover {
+    background: #2a2a2a; /* 悬停颜色稍微加亮 */
+}
+
+/* 链接颜色优化 */
+a {
+    color: #03dac6; /* 青绿色链接在深色背景下非常清晰 */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式适配：手机端自动改为单栏 */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .left-panel {
+        position: static;
+        width: 100%;
+    }
+}
