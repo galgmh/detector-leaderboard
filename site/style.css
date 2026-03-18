@@ -1,37 +1,82 @@
-body{
-font-family:Arial;
-background:#f4f4f4;
-margin:40px;
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 40px auto;
+    max-width: 1000px; /* 限制最大宽度，更有质感 */
+    color: #333;
 }
 
-h1{
-text-align:center;
+/* Header 布局 */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-input{
-width:300px;
-padding:10px;
-margin-bottom:20px;
+.logo {
+    width: 120px; /* 根据你的图片比例调整 */
+    height: auto;
+    margin-bottom: 10px;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-background:white;
+h1 {
+    margin-top: 0;
+    color: #222;
 }
 
-th,td{
-padding:12px;
-border-bottom:1px solid #ddd;
-text-align:left;
+/* 说明文字样式 */
+.description-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6;
 }
 
-th{
-background:#222;
-color:white;
-cursor:pointer;
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-tr:hover{
-background:#f2f2f2;
+input, select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
+
+input { flex-grow: 1; }
+
+/* 表格优化 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #2c3e50; /* 深蓝色调更专业 */
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+}
+
+th:hover { background: #34495e; }
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover { background: #fdfdfd; }
+
+/* 链接按钮化 */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover { text-decoration: underline; }
